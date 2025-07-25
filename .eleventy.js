@@ -20,7 +20,7 @@ module.exports = function (eleventyConfig) {
         }).use(markdownItAnchor)
     );
 
-    // Define passthrough for assets
+    // This is the crucial part: Copy the 'assets' directory from the project root to the output directory.
     eleventyConfig.addPassthroughCopy("assets");
 
     // Add watch target for JS files (needed for JS bundling in dev mode)

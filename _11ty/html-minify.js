@@ -1,12 +1,12 @@
 // Transformer to minify HTML output.
 
-const htmlmin = require("html-minifier");
+const { minify } = require("html-minifier-terser");
 
 const convert = async (rawContent, outputPath) => {
     const content = rawContent;
 
     if (outputPath && outputPath.endsWith(".html")) {
-        const minified = htmlmin.minify(content, {
+        const minified = minify(content, {
             useShortDoctype: true,
             removeComments: true,
             collapseWhitespace: true
