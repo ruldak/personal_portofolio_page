@@ -24,6 +24,7 @@
     "dependencies": {
         "@11ty/eleventy": "^3.1.2",
         "@11ty/eleventy-plugin-rss": "^1.1.1",
+        "@fortawesome/fontawesome-free": "^7.0.0",
         "@rollup/plugin-replace": "^2.4.2",
         "autoprefixer": "^10.2.6",
         "crypto-js": "^4.0.0",

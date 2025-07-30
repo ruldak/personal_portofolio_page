@@ -29,17 +29,14 @@ div.menu ul > li:last-child::after {
     visibility: hidden;
     content: "";
     position: relative;
-    right: -8.8rem;
-    width: 3px;
-    background-color: white;
+    right: -10.8rem;
     pointer-events: none;
-    border-right: solid 2px white;
     transition: top 0.5s ease;
 }
 
 @media screen and (max-width: 1280px) {
     div.menu ul > li:last-child::after {
-        right: -6.8rem;
+        right: -8.8rem;
     }
 }
 

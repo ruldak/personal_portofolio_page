@@ -22,6 +22,12 @@ module.exports = function (eleventyConfig) {
 
     // This is the crucial part: Copy the 'assets' directory from the project root to the output directory.
     eleventyConfig.addPassthroughCopy("assets");
+    eleventyConfig.addPassthroughCopy({
+        "node_modules/@fortawesome/fontawesome-free/css/all.min.css": "/assets/css/fontawesome.css"
+    });
+    eleventyConfig.addPassthroughCopy({
+        "node_modules/@fortawesome/fontawesome-free/webfonts": "/assets/webfonts"
+    });
 
     // Add watch target for JS files (needed for JS bundling in dev mode)
     eleventyConfig.addWatchTarget("./assets/js/");
