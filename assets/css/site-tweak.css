@@ -1,0 +1,35 @@
+:root {
+  --color: #4973ff;
+}
+
+.hero > .content {
+  max-width: 600px;
+  margin-top: 200px;
+}
+
+.hero {
+  position: relative; 
+  color: white;
+  background-color: transparent;
+  background-image: url("/assets/images/intro.svg");
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero h2 {
+  position: relative;
+  z-index: 1;
+  font-size: 4.5rem;
+  margin: 0 0 10px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero p {
+  position: relative;
+  z-index: 1;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.4;
+}
