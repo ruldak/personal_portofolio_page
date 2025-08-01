@@ -1,3 +1,5 @@
+/* hero section */
+
 :root {
   --color: #4973ff;
 }
@@ -33,3 +35,239 @@
   color: rgba(255, 255, 255, 0.5);
   line-height: 1.4;
 }
+
+/* about me Page */
+
+.about-container > h1 {
+	font-size: 2rem;
+	padding-bottom: 0.3em;
+	width: fit-content;
+	border-bottom: solid #ccc 1px;
+}
+
+.about-container > p {
+	margin-top: 30px;
+}
+
+/* why us page */
+
+/* From Uiverse.io by SouravBandyopadhyay */ 
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+  position: relative;
+  width: 100%;
+  height: 8rem;
+  background: #29292c;
+  border-radius: 1rem;
+  overflow: hidden;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 16px;
+  --gradient: linear-gradient(to bottom, #0891b2, #2563eb, #4f46e5);
+  --color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.feature-card:before {
+  position: absolute;
+  content: "";
+  inset: 0.0625rem;
+  border-radius: 0.9375rem;
+  background: #18181b;
+  z-index: 2
+}
+
+.feature-card:after {
+  position: absolute;
+  content: "";
+  width: 0.25rem;
+  inset: 0.65rem auto 0.65rem 0.5rem;
+  border-radius: 0.125rem;
+  background: var(--gradient);
+  transition: transform 300ms ease;
+  z-index: 4;
+}
+
+.feature-card:hover:after {
+  transform: translateX(0.15rem)
+}
+
+.feature-card-title {
+  color: var(--color);
+  padding: 0.65rem 0.25rem 0.4rem 1.25rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: transform 300ms ease;
+  z-index: 5;
+}
+
+.feature-card:hover .feature-card-title {
+  transform: translateX(0.15rem)
+}
+
+.feature-card-body {
+  color: #99999d;
+  padding: 0 1.25rem;
+  transition: transform 300ms ease;
+  z-index: 5;
+}
+
+.feature-card:hover .feature-card-body {
+  transform: translateX(0.25rem)
+}
+
+.feature-card-glow,
+.feature-card-border-glow {
+  position: absolute;
+  width: 20rem;
+  height: 20rem;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle closest-side at center, white, transparent);
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.feature-card-glow {
+  z-index: 3;
+}
+
+.feature-card-border-glow {
+  z-index: 1;
+}
+
+.feature-card:hover .feature-card-glow {
+  opacity: 0.1
+}
+
+.feature-card:hover .feature-card-border-glow {
+  opacity: 0.1
+}
+
+.note {
+  color: var(--color);
+  position: fixed;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 0.9rem;
+  width: 75%;
+}
+
+/* our services page */
+
+/* From Uiverse.io by satyamchaudharydev */ 
+.card {
+  --bg: #f7f7f8;
+  --hover-bg: #ffe5f4;
+  --hover-text: #e50087;
+  max-width: 23ch;
+  text-align: center;
+  background: var(--bg);
+  padding: 1.5em;
+  padding-block: 1.8em;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  transition:
+    0.3s cubic-bezier(0.6, 0.4, 0, 1),
+    transform 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  color: black;
+}
+
+.card__body {
+  color: #464853;
+  line-height: 1.5em;
+  font-size: 1em;
+}
+
+.card > strong {
+  display: block;
+  font-size: 1.4rem;
+  letter-spacing: -0.035em;
+}
+
+.card span {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--hover-text);
+  border-radius: 5px;
+  font-weight: bold;
+  top: 100%;
+  transition: all 0.3s cubic-bezier(0.6, 0.4, 0, 1);
+}
+
+/* portofolio page */
+
+/* From Uiverse.io by gharsh11032000 */ 
+.card-portofolio-container > .card {
+  position: relative;
+  max-width: 300px;
+  height: 200px;
+  background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+
+.card-portofolio-container .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card-portofolio-container .card:hover {
+  transform: rotate(-5deg) scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-portofolio-container .card__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #fff;
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card-portofolio-container .card:hover .card__content {
+  transform: translate(-50%, -50%) rotate(0deg);
+  opacity: 1;
+}
+
+.card-portofolio-container .card__title {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+  font-weight: 700;
+}
+
+.card-portofolio-container .card__description {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #777;
+  line-height: 1.4;
+}
+
+
