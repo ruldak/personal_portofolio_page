@@ -26,14 +26,8 @@ Make sure you have [Node.js](https://nodejs.org/) installed. This project also u
     cd your-directory
     ```
 
-2.  **Install dependencies:**
-    If you are using `yarn`:
+2.  **Install dependencies:** 
     ```bash
-    yarn install
-    ```
-    If you prefer `npm`, delete `yarn.lock` first:
-    ```bash
-    rm yarn.lock
     npm install
     ```
 
