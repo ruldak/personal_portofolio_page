@@ -4,7 +4,12 @@ let purge = false;
 
 // We want optimization only in production
 if (isProduction) {
-    purge = ["./content/**/*.njk", "./src/*.js"];
+    purge = {
+        content: ["./content/**/*.njk", "./src/*.js"],
+        options: {
+            safelist: ["dark"]
+        }
+    };
 }
 
 module.exports = {
