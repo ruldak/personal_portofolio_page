@@ -9,46 +9,13 @@ meta:
 
 <div class="card-container">
 	<!-- From Uiverse.io by satyamchaudharydev --> 
+	{% for service in services %}
 	<div class="card">
   		<div class="icon">
-    		<i class="fa-solid fa-layer-group fa-2x"></i>	
+    		<i class="fa-solid {{ service.icon }} fa-2x"></i>	
   		</div>
-  		<strong>Landing Page Creation</strong>
- 		<div class="card__body">Fast, responsive, and optimized for action — we build landing pages that help you get results.</div>
+  		<strong>{{ service.title }}</strong>
+ 		<div class="card__body">{{ service.body }}</div>
 	</div>
-	<div class="card">
-  		<div class="icon">
-    		<i class="fa-solid fa-pen-to-square fa-2x"></i>	
-  		</div>
-  		<strong>Copy & Content Guidance</strong>
- 		<div class="card__body">We help you shape clear and compelling messages that speak to your audience and build trust.</div>
-	</div>
-	<div class="card">
-  		<div class="icon">
-    		<i class="fa-solid fa-envelope fa-2x"></i>	
-  		</div>
-  		<strong>Contact Form Integration</strong>
- 		<div class="card__body">Make it easy for your visitors to reach you — we set up simple, functional contact forms that go straight to your inbox.</div>
-	</div>
-	<div class="card">
-  		<div class="icon">
-    		<i class="fa-solid fa-gauge-high fa-2x"></i>	
-  		</div>
-  		<strong>Performance Optimization</strong>
- 		<div class="card__body">Lightweight code and fast-loading pages to ensure a smooth experience on any device or connection.</div>
-	</div>
-	<div class="card">
-  		<div class="icon">
-    		<i class="fa-solid fa-magnifying-glass-chart fa-2x"></i>	
-  		</div>
-  		<strong>Basic SEO Setup</strong>
- 		<div class="card__body">We implement SEO best practices to help your page get indexed and found by the right people.</div>
-	</div>
-	<div class="card">
-  		<div class="icon">
-    		<i class="fa-solid fa-chart-line fa-2x"></i>	
-  		</div>
-  		<strong>Analytics Integration</strong>
- 		<div class="card__body">Track how your page is performing with tools like Google Analytics or Plausible — included and ready to go.</div>
-	</div>
+	{% endfor %}
 </div>

@@ -6,28 +6,12 @@ title: Why Us
 
 <div class="features-grid">
 	<!-- From Uiverse.io by SouravBandyopadhyay --> 
+	{% for feature in whyusfeatures %}
 	<div class="feature-card">
     	<div class="feature-card-glow"></div>
     	<div class="feature-card-border-glow"></div>
-    	<div class="feature-card-title">Built to Convert</div>
-    	<div class="feature-card-body">Every section, button, and word is crafted to guide visitors toward action — not distraction.</div>
+    	<div class="feature-card-title">{{ feature.title }}</div>
+    	<div class="feature-card-body">{{ feature.body }}</div>
   	</div>
-	<div class="feature-card">
-    	<div class="feature-card-glow"></div>
-    	<div class="feature-card-border-glow"></div>
-    	<div class="feature-card-title">Lightning-Fast Pages</div>
-    	<div class="feature-card-body">Slow pages kill interest. Ours load fast, work on all devices, and keep your visitors engaged.</div>
-  	</div>
-	<div class="feature-card">
-    	<div class="feature-card-glow"></div>
-    	<div class="feature-card-border-glow"></div>
-    	<div class="feature-card-title">Efficient, Without Compromise</div>
-    	<div class="feature-card-body">Using templates helps us deliver quality landing pages faster and more affordably — without starting from scratch.</div>
-  	</div>
-	<div class="feature-card">
-    	<div class="feature-card-glow"></div>
-    	<div class="feature-card-border-glow"></div>
-    	<div class="feature-card-title">Clear Process, Zero Hassle</div>
-    	<div class="feature-card-body">We listen, suggest, and execute — with transparent communication every step of the way.</div>
-  	</div>
+	{% endfor %}
 </div>

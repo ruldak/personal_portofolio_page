@@ -8,26 +8,16 @@ meta:
 ---
 
 <div class="card-portofolio-container">
-	<!--     first card -->
+	{% for item in portofolio %}
     <div class="card-in-1024 bg-transparent h-[fit-content] w-72 md:mb-5 md:h-56 md:w-56 lg:w-72 lg:h-72">
       <div class="h-[144px] w-full">
-        <img class="w-full h-full object-fill rounded-t" src="/assets/images/digital_skill_landing_page_screenshot.png" alt="portofolio_image">
+        <img class="w-full h-full object-fill rounded-t" src="{{ item.image }}" alt="{{ item.alt }}">
       </div>
       <div class="w-full p-3">
-        <a href="https://digital-skill-six.vercel.app/" class=" hover:text-yellow-600 text-gray-700">
-          <span class="lg:text-lg md:text-sm font-semibold uppercase tracking-wide ">Canva Design Course</span>
+        <a href="{{ item.link }}" class=" hover:text-yellow-600 text-gray-700">
+          <span class="lg:text-lg md:text-sm font-semibold uppercase tracking-wide ">{{ item.title }}</span>
         </a> 
       </div>
     </div>
-    <!--     second card -->
-    <div class="card-in-1024 bg-transparent md:mb-5 md:h-56 md:w-56 lg:w-72 lg:h-72 h-[fit-content] w-72">
-      <div class="h-[144px] w-full">
-        <img class="w-full h-full object-fill rounded-t" src="/assets/images/wedding_photographer_landing_page_screenshot.png" alt="piña">
-      </div>
-      <div class="w-full p-3">
-        <a href="https://wedding-photographer-landing-page.vercel.app/" class=" hover:text-yellow-600 text-gray-700">
-          <span class="lg:text-lg md:text-sm font-semibold uppercase tracking-wide ">Wedding Photography Landing Page</span>
-        </a> 
-      </div>
-    </div> 
+	{% endfor %}
 </div>

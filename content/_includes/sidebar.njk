@@ -16,36 +16,14 @@
     </div>
     <div class="menu flex justify-center">
         <ul class="w-fit list-none pl-0">
-            <li class="navitem flex gap-4 {{ page.url | isHomeLink('/') }}">
+            {% for item in navigation %}
+            <li class="navitem flex gap-4 {% if item.isHome %}{{ page.url | isHomeLink(item.url) }}{% elif item.activePath %}{{ page.url | isActiveLink(item.activePath) }}{% endif %}">
 				<div>
-					<i class="fa-solid fa-door-open"></i>
+					<i class="fa-solid {{ item.icon }}"></i>
 				</div>
-                <a href="/" class="block no-underline">Welcome</a>
+                <a href="{{ item.url }}" class="block no-underline">{{ item.text }}</a>
             </li>
-            <li class="navitem flex gap-4 {{ page.url | isActiveLink('/about-me') }}">
-				<div>
-					<i class="fa-solid fa-id-card"></i>
-				</div>
-                <a href="/about-me/" class="block no-underline">About Me</a>
-            </li>
-            <li class="navitem flex gap-4 {{ page.url | isActiveLink('/why') }}">
-				<div>
-					<i class="fa-solid fa-handshake"></i>
-				</div>
-                <a href="/why-us/" class="block no-underline">Why Us</a>
-            </li>
-            <li class="navitem flex gap-4 {{ page.url | isActiveLink('/services') }}">
-				<div>
-					<i class="fa-solid fa-tools"></i>
-				</div>
-                <a href="/services/" class="block no-underline">Our Services</a>
-            </li>
-			<li class="navitem flex gap-4 {{ page.url | isActiveLink('/portofolio') }}">
-				<div>
-					<i class="fa-solid fa-folder-open"></i>
-				</div>
-                <a href="/portofolio/" class="block no-underline">Portofolio</a>
-            </li>
+            {% endfor %}
         </ul>
     </div>
     <div class="row-end-5 flex justify-center gap-5 mb-12">
