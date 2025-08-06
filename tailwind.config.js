@@ -6,8 +6,8 @@ let purge = false;
 if (isProduction) {
     purge = {
         content: ["./content/**/*.njk", "./src/*.js"],
-        options: {
-            safelist: ["dark"]
+        safelist: {
+            standard: [/^dark:.*/]
         }
     };
 }
