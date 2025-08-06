@@ -12,21 +12,9 @@
 </script>
 {% endif %}
 <script>
-// Toggle dark/light mode, inline JS to avoid any theme flicker
-if (localStorage.theme === 'light' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)) {
-  document.documentElement.classList.remove('dark')
-} else {
-  document.documentElement.classList.add('dark')
-}
-
- function slideLeftSidebar() {
-    const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('sidebar-overlay');
-
-    const isOpen = !sidebar.classList.contains('-translate-x-full');
-
-    sidebar.classList.toggle('-translate-x-full');
-    overlay.classList.toggle('hidden');
+// Inline JS to avoid theme flicker
+if (localStorage.getItem('theme') === 'light') {
+    document.documentElement.classList.remove('dark');
 }
 </script>
 <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/favicons/apple-touch-icon.png' | addHash }}">

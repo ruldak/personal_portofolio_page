@@ -2,16 +2,14 @@ const isProduction = process.env.NODE_ENV === "production";
 
 let purge = false;
 
-// We want optimization only in production
-// Purge is temporarily disabled to diagnose the dark mode issue.
-// if (isProduction) {
-//     purge = {
-//         content: ["./content/**/*.njk", "./src/*.js"],
-//         safelist: {
-//             standard: [/^dark:.*/]
-//         }
-//     };
-// }
+if (isProduction) {
+    purge = {
+        content: ["./content/**/*.njk", "./src/*.js"],
+        safelist: {
+            standard: [/^dark:.*/]
+        }
+    };
+}
 
 module.exports = {
     purge,
