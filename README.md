@@ -60,3 +60,8 @@ npm run build
 ```
 
 This will generate the final static site in the `_site` directory, which can then be deployed to any static hosting provider.
+
+## Credits
+
+- This project is based on the [Eleventy Chirpy Blog Template](https://github.com/muenzpraeger/eleventy-chirpy-blog-template) by René Winkelmeyer (muenzpraeger).  
+- Licensed under the [MIT License](https://github.com/muenzpraeger/eleventy-chirpy-blog-template/blob/main/LICENSE.md).
