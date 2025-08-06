@@ -1,5 +1,5 @@
-const { format, formatISO, getYear } = require("date-fns");
-const pluginRss = require("@11ty/eleventy-plugin-rss");
+const { format, formatISO } = require("date-fns");
+
 const pluginToc = require("eleventy-plugin-toc");
 const { MD5 } = require("crypto-js");
 const { URL } = require("url");
@@ -35,7 +35,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.setUseGitIgnore(false);
 
     // Add 3rd party plugins
-    eleventyConfig.addPlugin(pluginRss);
+    
     eleventyConfig.addPlugin(pluginToc);
 
     // Define 11ty template formats
@@ -48,34 +48,23 @@ module.exports = function (eleventyConfig) {
         "png"
     ]);
 
-    // Generate excerpt from first paragraph
-    eleventyConfig.addShortcode("excerpt", (article) =>
-        extractExcerpt(article)
-    );
+    
 
     // Set absolute url
     eleventyConfig.addNunjucksFilter("absoluteUrl", (path) => {
         return new URL(path, siteconfig.url).toString();
     });
 
-    // Extract reading time
-    eleventyConfig.addNunjucksFilter("readingTime", (wordcount) => {
-        let readingTime = Math.ceil(wordcount / 220);
-        if (readingTime === 1) {
-            return readingTime + " minute";
-        }
-        return readingTime + " minutes";
+    // Format dates for JSON-LD
+    eleventyConfig.addNunjucksFilter("isodate", function (date) {
+        return formatISO(date);
     });
 
-    // Extract word count
-    eleventyConfig.addNunjucksFilter("formatWords", (wordcount) => {
-        return wordcount.toLocaleString("en");
-    });
+    
 
     // Returns CSS class for home page link
     eleventyConfig.addNunjucksFilter("isHomeLink", function (url, pattern) {
-        return (pattern === "/" && url === "/") ||
-            (pattern === "/" && url.startsWith("/posts"))
+        return (pattern === "/" && url === "/")
             ? "active"
             : "";
     });
@@ -85,38 +74,13 @@ module.exports = function (eleventyConfig) {
         return url.length > 1 && url.startsWith(pattern) ? "active" : "";
     });
 
-    // Format dates for sitemap
-    eleventyConfig.addNunjucksFilter("sitemapdate", function (date) {
-        return format(date, "yyyy-MM-dd");
-    });
+    
 
-    // Format dates for JSON-LD
-    eleventyConfig.addNunjucksFilter("isodate", function (date) {
-        return formatISO(date);
-    });
+    
 
-    // Extracts the year from a post
-    eleventyConfig.addNunjucksFilter("year", function (post) {
-        if (post && post.date) {
-            return getYear(post.date);
-        }
-        return "n/a";
-    });
+    
 
-    // Extracts the day of a date
-    eleventyConfig.addNunjucksFilter("day", function (date) {
-        return format(date, "dd");
-    });
-
-    // Extracts the month of a date
-    eleventyConfig.addNunjucksFilter("month", function (date) {
-        return format(date, "MMM");
-    });
-
-    // Extracts readable date of a date
-    eleventyConfig.addNunjucksFilter("readableDate", function (date) {
-        return format(date, "MMM dd, yyyy");
-    });
+    
 
     // Add custom hash for cache busting
     const hashes = new Map();
@@ -133,10 +97,7 @@ module.exports = function (eleventyConfig) {
         return `${absolutePath}?hash=${hash}`;
     });
 
-    // Create custom collection for getting the newest 5 updates
-    eleventyConfig.addCollection("recents", function (collectionApi) {
-        return collectionApi.getAllSorted().reverse().slice(0, 5);
-    });
+    
 
     // Plugin for setting _blank and rel=noopener on external links in markdown content
     eleventyConfig.addPlugin(require("./_11ty/external-links.js"));
@@ -155,18 +116,3 @@ module.exports = function (eleventyConfig) {
     };
 };
 
-// Taken from here => https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/
-function extractExcerpt(article) {
-    if (!Object.prototype.hasOwnProperty.call(article, "templateContent")) {
-        console.warn(
-            'Failed to extract excerpt: Document has no property "templateContent".'
-        );
-        return null;
-    }
-
-    const content = article.templateContent;
-
-    const excerpt = content.slice(0, content.indexOf("\n"));
-
-    return excerpt;
-}

@@ -19,14 +19,6 @@ export default {
         // Minify JS hanya di production
         isProduction && terser(),
         
-        // Plugin replace untuk Algolia
-        (siteconfig.algoliaSearch && siteconfig.algoliaSearch.enabled) ? replace({
-            preventAssignment: true,
-            values: {
-                "process.env.ALGOLIA_INDEX": JSON.stringify(`netlify_${siteconfig.algoliaSearch.siteId}_${siteconfig.algoliaSearch.branch}_all`),
-                "process.env.ALGOLIA_APP_ID": JSON.stringify(siteconfig.algoliaSearch.appId),
-                "process.env.ALGOLIA_SEARCH_API_KEY": JSON.stringify(siteconfig.algoliaSearch.searchApiKey)
-            }
-        }) : null
+        
     ].filter(Boolean)
 };

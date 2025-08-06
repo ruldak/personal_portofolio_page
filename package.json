@@ -9,7 +9,7 @@
         "build:eleventy": "eleventy",
         "build:js": "rollup -c scripts/rollup.config.js",
         "dev": "concurrently \"npm:dev:*\"",
-        "dev:css:prism": "postcss assets/css/prism.css -o assets/css/prism-build.css --watch",
+        
         "dev:css:site": "postcss assets/css/site.css -o assets/css/site-build.css --watch",
         "dev:eleventy": "eleventy --serve",
         "dev:js": "rollup -c scripts/rollup.config.js -w",
