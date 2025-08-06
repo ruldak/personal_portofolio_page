@@ -6,7 +6,7 @@ let cssnano = undefined;
 if (isProduction) {
     cssnano = {
         cssnano: {
-            preset: "default"
+            preset: ["default", { discardComments: { removeAll: true } }]
         }
     };
 }
