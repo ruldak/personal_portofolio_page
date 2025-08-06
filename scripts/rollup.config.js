@@ -1,7 +1,7 @@
 require("dotenv").config();
 import { terser } from "rollup-plugin-terser";
-import replace from "@rollup/plugin-replace"; // Gunakan import untuk ES modules
-import siteconfig from "../content/_data/siteconfig.js";
+
+
 
 const isProduction = process.env.NODE_ENV === "production";
 
