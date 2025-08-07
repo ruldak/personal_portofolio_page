@@ -54,9 +54,5 @@
         "markdownlint": "^0.38.0",
         "markdownlint-cli2": "^0.18.1",
         "prettier": "^2.3.1"
-    },
-    "volta": {
-        "node": "14.15.4",
-        "yarn": "1.22.10"
     }
 }
