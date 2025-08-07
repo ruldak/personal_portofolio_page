@@ -31,19 +31,15 @@ Make sure you have [Node.js](https://nodejs.org/) installed. This project also u
     npm install
     ```
 
-3.  **Build the CSS:**
-    Before starting the development server, you need to build the CSS files.
+3.  **Run the development server:**
+    This command will build your CSS and JavaScript, start a local server, watch for changes in your files, and automatically reload the browser.
     ```bash
-    npm run build:css
-    ```
-
-4.  **Run the development server:**
-    This command will start a local server, watch for changes, and automatically reload the browser.
-    ```bash
-    npm run dev:eleventy
+    npm run dev
     ```
 
     The site will be available at `http://localhost:8080`.
+
+    Please note that the initial startup might take a few moments as it builds the CSS and JavaScript assets.
 
 ## Deployment
 
