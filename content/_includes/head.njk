@@ -9,6 +9,16 @@
   gtag('js', new Date());
 
   gtag('config', '{{ siteconfig.googleAnalytics }}');
+
+  function slideLeftSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+
+        const isOpen = !sidebar.classList.contains('-translate-x-full');
+
+        sidebar.classList.toggle('-translate-x-full');
+        overlay.classList.toggle('hidden');
+    }
 </script>
 {% endif %}
 
