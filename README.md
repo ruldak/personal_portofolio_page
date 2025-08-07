@@ -16,7 +16,7 @@ Follow these steps to run the project locally.
 
 ### Prerequisites
 
-Make sure you have [Node.js](https://nodejs.org/) installed. This project also uses [Volta](https://volta.sh/) to pin the Node.js version.
+Make sure you have [Node.js](https://nodejs.org/) installed.
 
 ### Instructions
 
