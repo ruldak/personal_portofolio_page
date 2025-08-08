@@ -12,7 +12,7 @@
         "mainEntityOfPage": "{{ page.url | absoluteUrl }}",
         "datePublished": "{{ page.date | isodate }}",
         "description": "{{ content | striptags | truncate(140) }}"
-        {% elif layout == 'base' %}
+        {% elif layout == 'base.njk' %}
         "@type": "WebSite",
         "url": "{{ siteconfig.url }}",
         "name": "{{ siteconfig.title }}",
