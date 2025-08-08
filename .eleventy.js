@@ -22,6 +22,7 @@ module.exports = function (eleventyConfig) {
 
     // This is the crucial part: Copy the 'assets' directory from the project root to the output directory.
     eleventyConfig.addPassthroughCopy("assets");
+    eleventyConfig.addPassthroughCopy("content/google74e5909306d4e22e.html");
     eleventyConfig.addPassthroughCopy({
         "node_modules/@fortawesome/fontawesome-free/css/all.min.css": "/assets/css/fontawesome.css"
     });
