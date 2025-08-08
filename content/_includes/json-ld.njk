@@ -1,6 +1,7 @@
 <script type="application/ld+json">
     {
         "@context": "https://schema.org",
+        {% if layout == 'post' %}
         "@type": "Article",
         "headline": "{{ title }}",
         "image": ["{% if image %}{{ image | absoluteUrl }}{% else %}{{ siteconfig.openGraphDefaultImage | absoluteUrl }}{% endif %}"],
@@ -11,5 +12,29 @@
         "mainEntityOfPage": "{{ page.url | absoluteUrl }}",
         "datePublished": "{{ page.date | isodate }}",
         "description": "{{ content | striptags | truncate(140) }}"
+        {% elif layout == 'base' %}
+        "@type": "WebSite",
+        "url": "{{ siteconfig.url }}",
+        "name": "{{ siteconfig.title }}",
+        "description": "{{ siteconfig.description }}",
+        "publisher": {
+            "@type": "Organization",
+            "name": "{{ siteconfig.author }}",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "{{ siteconfig.openGraphDefaultImage | absoluteUrl }}"
+            }
+        }
+        {% elif layout == 'about' %}
+        "@type": "Person",
+        "name": "{{ siteconfig.author }}",
+        "url": "{{ page.url | absoluteUrl }}",
+        "image": "{{ siteconfig.image | absoluteUrl }}",
+        "jobTitle": "Web Developer",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "{{ siteconfig.author }}"
+        }
+        {% endif %}
     }
 </script>

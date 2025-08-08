@@ -8,11 +8,13 @@ module.exports = {
     // Profile image for left sidebar
     image: "https://avatars.githubusercontent.com/u/219676480?v=4",
     // Image alt text for left sidebar
-    imageAlt: "René and Einstein",
+    imageAlt: "Hary Cahyono's profile picture",
     // Author name, shown in left sidebar, and used in JSON-LD
     author: "René Winkelmeyer",
     // Site description, shown below site image (optional)
     description: "My kitchen sink about stuff",
+    // Default keywords, can be overwritten in frontmatter
+    keywords: "portofolio, web developer, eleventy, javascript, html, css",
     // OpenGraph default image, in case you don't have an `image`
     // set in your Markdown frontmatter; relevant for social
     // sharing.
