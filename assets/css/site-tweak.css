@@ -148,6 +148,7 @@ button:active:before {
   font-size: 1.3rem;
   transition: transform 300ms ease;
   z-index: 5;
+  letter-spacing: 0.1em;
 }
 
 .feature-card:hover .feature-card-title {
