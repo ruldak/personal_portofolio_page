@@ -1,9 +1,5 @@
 /* hero section */
 
-:root {
-  --color: #4973ff;
-}
-
 .hero > .content {
   max-width: 600px;
   margin-top: 200px;
@@ -120,7 +116,7 @@ button:active:before {
   isolation: isolate;
   position: relative;
   width: 100%;
-  height: 8rem;
+  height: 170px;
   background: #29292c;
   border-radius: 1rem;
   overflow: hidden;
@@ -129,6 +125,7 @@ button:active:before {
   --gradient: linear-gradient(to bottom, #0891b2, #2563eb, #4f46e5);
   --color: #2563eb;
   margin-bottom: 15px;
+  padding: 15px;
 }
 
 .feature-card:before {
@@ -140,26 +137,15 @@ button:active:before {
   z-index: 2
 }
 
-.feature-card:after {
-  position: absolute;
-  content: "";
-  width: 0.25rem;
-  inset: 0.65rem auto 0.65rem 0.5rem;
-  border-radius: 0.125rem;
-  background: var(--gradient);
-  transition: transform 300ms ease;
-  z-index: 4;
-}
-
 .feature-card:hover:after {
   transform: translateX(0.15rem)
 }
 
 .feature-card-title {
-  color: var(--color);
-  padding: 0.65rem 0.25rem 0.4rem 1.25rem;
+  color: #dbdbdb;
+  padding: 0.65rem 0.25rem 0 1.25rem;
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   transition: transform 300ms ease;
   z-index: 5;
 }
@@ -222,7 +208,8 @@ button:active:before {
 .card-container {
 	display: flex;
     flex-wrap: wrap;
-	gap: 30px;
+	column-gap: 25px;
+    row-gap: 15px;
 	justify-content: center;
 	margin-bottom: 30px;
 }
