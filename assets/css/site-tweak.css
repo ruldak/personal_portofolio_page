@@ -126,6 +126,7 @@ button:active:before {
   --color: #2563eb;
   margin-bottom: 15px;
   padding: 15px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .feature-card:before {
@@ -217,16 +218,14 @@ button:active:before {
 
 /* From Uiverse.io by satyamchaudharydev */ 
 .card {
-  --bg: #f7f7f8;
-  --hover-bg: #ffe5f4;
-  --hover-text: #e50087;
   max-width: 34ch;
   height: 45ch;
   text-align: center;
-  background: var(--bg);
+  background: #18181b;
   padding: 1.5em;
   padding-block: 1.8em;
   border-radius: 5px;
+  border: 1px solid #29292C;
   position: relative;
   overflow: hidden;
   transition:
@@ -237,14 +236,15 @@ button:active:before {
   justify-content: center;
   align-items: center;
   gap: 1em;
-  color: black;
-  flex: 0 0 calc(33.33% - 20px); /* Lebar 33.33% - gap */
+  color: #dbdbdb;
+  flex: 0 0 calc(33.33% - 20px);
   box-sizing: border-box;
   font-size: .77rem;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .card__body {
-  color: #464853;
+  color: #99999d;
   line-height: 1.5em;
   font-size: 1em;
 }
@@ -253,21 +253,6 @@ button:active:before {
   display: block;
   font-size: 1.4rem;
   letter-spacing: -0.035em;
-}
-
-.card span {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--hover-text);
-  border-radius: 5px;
-  font-weight: bold;
-  top: 100%;
-  transition: all 0.3s cubic-bezier(0.6, 0.4, 0, 1);
 }
 
 @media (max-width: 1024px) {
@@ -321,4 +306,4 @@ button:active:before {
 .card-portofolio-container a {
 	color: inherit;
  	text-decoration: none;
- }
+ } 
